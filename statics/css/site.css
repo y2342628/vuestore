@@ -1,16 +1,7 @@
-#v1 {
-	background: skyblue;
-	border: 2px solid blue;
+body{
+	background: white;
 }
-.small{
-	width: 200px;
-	height: 100px;
-	border: 1px solid #000;
-	background: url(../../images/small.jpg);
-}
-.big{
-	width: 300px;
-	height: 300px;
-	border: 1px solid #000;
-	background: url(../../images/big.jpg);
+.tmpMar{
+	margin-top: 45px;
+	margin-bottom: 50px;
 }

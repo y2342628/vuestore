@@ -11,21 +11,28 @@ Vue.use(vueRouter)
 
 //4.1.1导入组件]
 
-import login from './components/account/login.vue'
-import register from './components/account/register.vue'
+import home from './components/home.vue'
+import shopcar from './components/shopcar/car.vue'
+
 
 //4.2定义路由规则
 var  router=new vueRouter({
+	linkActiveClass:'mui-active',
 	routes:[
-		{path:'/login',component:login},
-		{path:'/register',component:register},
+		{path:'/home',component:home},
+		{path:'/shopcar',component:shopcar},
 	]
 })
+//8.导入vue-resource功能
+import vueResource from 'vue-resource'
+Vue.use(vueResource)
 //5.导入mint-ui和css
 import 'mint-ui/lib/style.min.css';
 import mint from 'mint-ui';
 //6.导入mui的css
 import '../statics/mui/css/mui.css';
+//7.导入公共css
+import '../statics/css/site.css'
 //绑定mint-ui
 Vue.use(mint)
 //3、实例化vue
