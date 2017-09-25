@@ -11,8 +11,10 @@ Vue.use(vueRouter)
 
 //4.1.1导入组件]
 
-import home from './components/home.vue'
-import shopcar from './components/shopcar/car.vue'
+import home from './components/home.vue';
+import shopcar from './components/shopcar/car.vue';
+import newslist from './components/news/newslist.vue';
+import newsinfo from './components/news/newsinfo.vue';
 
 
 //4.2定义路由规则
@@ -21,11 +23,20 @@ var  router=new vueRouter({
 	routes:[
 		{path:'/home',component:home},
 		{path:'/shopcar',component:shopcar},
+		{path:'/news/newslist',component:newslist},
+		{path:'/news/newsinfo/:id',component:newsinfo}
 	]
 })
 //8.导入vue-resource功能
 import vueResource from 'vue-resource'
 Vue.use(vueResource)
+//9.利用moment日期处理类库格式化时间
+import moment from 'moment'
+Vue.filter('datefmt',function(input,filterstr){
+	filterstr=filterstr?filterstr:'YYYY-MM-DD HH:mm:ss';
+	 return moment(input).format(filterstr)
+})
+
 //5.导入mint-ui和css
 import 'mint-ui/lib/style.min.css';
 import mint from 'mint-ui';
