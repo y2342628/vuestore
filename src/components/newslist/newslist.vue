@@ -37,6 +37,10 @@
 			getNews(){
 				this.$http.get(common.apidomain+'/api/getnewslist')
 				.then(function(res){
+					if(res.body.status!=0){
+						Toast(res.body.message)
+						return;
+					}
 					this.list=res.body.message;
 				})
 			}

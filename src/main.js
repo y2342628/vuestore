@@ -13,8 +13,10 @@ Vue.use(vueRouter)
 
 import home from './components/home.vue';
 import shopcar from './components/shopcar/car.vue';
-import newslist from './components/news/newslist.vue';
-import newsinfo from './components/news/newsinfo.vue';
+import newslist from './components/newslist/newslist.vue';
+import newsinfo from './components/newslist/newsinfo.vue';
+
+
 
 
 //4.2定义路由规则
