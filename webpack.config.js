@@ -22,7 +22,7 @@ module.exports={
 				loader:'style-loader!css-loader!less-loader'
 			},
 			{
-				test:/\.(png|jpg|gif|ttf)$/,
+				test:/\.(png|jpg|gif|ttf|svg)$/,
 				loader:'url-loader?limit=20000'//limit表示如果路径文件大于20KB则把路径打包到buildjs中小于20k则直接转换成64位2进制打包到buildjs中
 			},
 			{

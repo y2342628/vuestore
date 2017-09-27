@@ -49,7 +49,7 @@
 		methods:{
 			// 发表评论功能
 			postcomment(){
-				if(!this.postcontent){
+				if(!this.postcontent.trim()){
 					Toast("不能提交空的评论");
 					return;
 				}

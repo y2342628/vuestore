@@ -3,7 +3,9 @@
 		<!-- 1.利用mintui实现轮播图 -->
 		<mt-swipe :auto="2000">
 		  <mt-swipe-item v-for='item in list'>
-		  	<img :src="item.img">
+		  	<a :href="item.url">
+		  		<img :src="item.img">
+		  	</a>
 		  </mt-swipe-item>
 		</mt-swipe>
 		<!-- 2.利用mui的九宫格实现导航栏 -->

@@ -15,6 +15,8 @@ import home from './components/home.vue';
 import shopcar from './components/shopcar/car.vue';
 import newslist from './components/newslist/newslist.vue';
 import newsinfo from './components/newslist/newsinfo.vue';
+import photolist from './components/photo/photolist.vue';
+import photoinfo from './components/photo/photoinfo.vue';
 
 
 
@@ -23,10 +25,13 @@ import newsinfo from './components/newslist/newsinfo.vue';
 var  router=new vueRouter({
 	linkActiveClass:'mui-active',
 	routes:[
+		{path:'/',redirect:'/home'},
 		{path:'/home',component:home},
 		{path:'/shopcar',component:shopcar},
 		{path:'/news/newslist',component:newslist},
-		{path:'/news/newsinfo/:id',component:newsinfo}
+		{path:'/news/newsinfo/:id',component:newsinfo},
+		{path:'/photo/photolist',component:photolist},
+		{path:'/photo/photoinfo/:id',component:photoinfo}
 	]
 })
 //8.导入vue-resource功能
@@ -38,6 +43,9 @@ Vue.filter('datefmt',function(input,filterstr){
 	filterstr=filterstr?filterstr:'YYYY-MM-DD HH:mm:ss';
 	 return moment(input).format(filterstr)
 })
+//10.导入缩略图放大显示的组件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 //5.导入mint-ui和css
 import 'mint-ui/lib/style.min.css';
