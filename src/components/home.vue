@@ -1,13 +1,7 @@
 <template>
 	<div class="tmpMar">
 		<!-- 1.利用mintui实现轮播图 -->
-		<mt-swipe :auto="2000">
-		  <mt-swipe-item v-for='item in list'>
-		  	<a :href="item.url">
-		  		<img :src="item.img">
-		  	</a>
-		  </mt-swipe-item>
-		</mt-swipe>
+			<slide :list='list'></slide>
 		<!-- 2.利用mui的九宫格实现导航栏 -->
 		<div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
@@ -53,6 +47,8 @@
 	import { Toast } from 'mint-ui';
 	//引入ajax域名
 	import common from '../kits/common.js'
+	//引入轮播图组件
+	import slide from './subcom/slide.vue'
 	export default{
 		data(){
 			return {
@@ -73,18 +69,14 @@
 					this.list=res.body.message;
 				})
 			}
+		},
+		components:{
+			slide
 		}
 	}
 </script>
 <style scoped>
-	.mint-swipe{
-		height: 250px;
-	}
 	
-	.mint-swipe-item img{
-		width: 100%;
-		height: 100%;
-	}
 	.mui-content{
 		background-color: #fff;
 	}

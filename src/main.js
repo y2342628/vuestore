@@ -17,6 +17,10 @@ import newslist from './components/newslist/newslist.vue';
 import newsinfo from './components/newslist/newsinfo.vue';
 import photolist from './components/photo/photolist.vue';
 import photoinfo from './components/photo/photoinfo.vue';
+import goodslist from './components/goods/goodslist.vue';
+import goodsinfo from './components/goods/goodsinfo.vue';
+import goodsdesc from './components/goods/goodsdesc.vue';
+import goodscomment from './components/goods/goodscomment.vue';
 
 
 
@@ -31,7 +35,11 @@ var  router=new vueRouter({
 		{path:'/news/newslist',component:newslist},
 		{path:'/news/newsinfo/:id',component:newsinfo},
 		{path:'/photo/photolist',component:photolist},
-		{path:'/photo/photoinfo/:id',component:photoinfo}
+		{path:'/photo/photoinfo/:id',component:photoinfo},
+		{path:'/goods/goodslist',component:goodslist},
+		{path:'/goods/goodsinfo/:id',component:goodsinfo},
+		{path:'/goods/goodsdesc/:id',component:goodsdesc},
+		{path:'/goods/goodscomment/:id',component:goodscomment},
 	]
 })
 //8.导入vue-resource功能
