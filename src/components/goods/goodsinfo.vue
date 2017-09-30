@@ -10,10 +10,10 @@
 		 	<p class="line"></p>
 		 	<ul>
 		 		<li>市场价：<del>￥{{goodinfo.market_price}}</del>  销售价：<span class="red">￥{{goodinfo.sell_price}}</span></li>
-		 		<li>购买数量</li>
+		 		<li>购买数量:<inputNumber @sendcount='getcount'></inputNumber></li>
 		 		<li>
 		 			<mt-button size="small" type="primary">立即购买</mt-button>
-					<mt-button size="small" type="danger" >加入购物车</mt-button>
+					<mt-button size="small" type="danger"  @click='addcar'>加入购物车</mt-button>
 		 		</li>
 		 	</ul>
 		 </div>
@@ -45,12 +45,20 @@
 	import { Toast } from 'mint-ui';
 	//引入ajax域名
 	import common from '../../kits/common.js'
+	//引入增删数量的组件
+	import inputNumber from '../subcom/inputNumber.vue'
+	//引入共有的vm对象
+	import {vm} from '../../kits/vm.js'
+	//引入本地存储系列方法
+	import {setItem} from '../../kits/localitem.js'
+
 	export default{
 		data(){
 			return {
 				id:0,
 				imglist:[],
-				goodinfo:{}
+				goodinfo:{},
+				count:1
 			}
 		},
 		created(){
@@ -80,10 +88,22 @@
 					}
 					this.goodinfo=res.body.message[0]
 				})
+			},
+			//获取组件传来的count
+			getcount(value){
+				this.count=value;
+			},
+			//加入购物车事件
+			addcar(){
+				//发送给app.vue页面
+				vm.$emit('sendtoapp',this.count);
+				//加入本地存储
+				setItem({id:this.id,count:this.count})
 			}
 		},
 		components:{
-			slide
+			slide,
+			inputNumber
 		}
 	}
 </script>

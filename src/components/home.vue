@@ -2,6 +2,7 @@
 	<div class="tmpMar">
 		<!-- 1.利用mintui实现轮播图 -->
 			<slide :list='list'></slide>
+			
 		<!-- 2.利用mui的九宫格实现导航栏 -->
 		<div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
